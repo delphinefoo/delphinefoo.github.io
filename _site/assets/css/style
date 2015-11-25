@@ -1,0 +1,22 @@
+body {
+  font-family: 'Avenir', sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.banner1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 435px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/banner1.jpg");
+  z-index: -1;
+}
