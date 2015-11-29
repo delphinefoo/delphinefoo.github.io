@@ -5,12 +5,20 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
   </head>
 
   <body>
-    <header>
-     {% include header.html %}
-    </header>
-    {{  content }}
+    <div class="wrapper">
+      <header>
+        {% include header.html %}
+      </header>
+      <main>
+        {{  content }}
+      </main>
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
   </body>
 </html>

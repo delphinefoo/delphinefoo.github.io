@@ -1,2 +1,0 @@
-# delphinefoo.github.io
-Blog

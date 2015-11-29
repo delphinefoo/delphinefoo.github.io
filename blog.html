@@ -2,12 +2,16 @@
 layout: default
 ---
 
-<section class="main">
+<div class="headline">
+    <h1>My thoughts on programming.</h1>
+</div>
+<div class="post-list">
   <ul>
     {% for post in site.posts %}
       <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <div class="left-col"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></div>
+         <div class="right-col"><time>{{ post.date | date: '%B %-d, %Y'}}</time></div>
       </li>
     {% endfor %}
   </ul>
-</section>
+</div>
