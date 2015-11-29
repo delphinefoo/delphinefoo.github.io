@@ -111,7 +111,7 @@ main {
 
 .languages:hover .popup {
   display: block;
-  margin: 0 auto;
+  left: 37%;
   bottom: 10%;
   max-width: 25%;
 }
