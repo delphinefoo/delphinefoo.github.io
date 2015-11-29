@@ -12,7 +12,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #699;
 }
 
 a:visited {
@@ -22,6 +22,14 @@ a:visited {
 h1 {
   font-weight: 600;
   margin: 0 auto;
+}
+
+p {
+  padding-bottom: 1em;
+}
+
+.centered {
+  text-align: center;
 }
 
 .wrapper {
@@ -39,7 +47,7 @@ main {
 .content {
   margin: 5% auto;
   text-align: center;
-  width: 70%;
+  width: 50%;
   font-size: 1.2em;
   line-height: 130%;
 }
@@ -108,13 +116,26 @@ li a:hover {
 
 /* Posts layout */
 
+.headline h1 {
+  margin-bottom: 10px;
+}
+
 .back {
   display: block;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .back:before {
   content: '<<';
+}
+
+.blog {
+  margin-top: 5%;
+}
+
+.blog time {
+  font-size: .7em;
 }
 
 .date {
@@ -124,6 +145,12 @@ li a:hover {
 a.post-title:hover {
   color: #066;
 }
+
+.post {
+  text-align: justify;
+  text-indent: 20px;
+}
+
 /* Posts landing page */
 
 .left-col {
@@ -141,6 +168,7 @@ a.post-title:hover {
   max-width: 60%;
   margin: 8% auto 10%;
   min-height: 100%;
+  font-size: 1.2em;
 }
 
 .top {
@@ -152,7 +180,7 @@ a.post-title:hover {
 hr {
   width: 15%;
   margin-bottom: 75px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* Footer */
