@@ -44,6 +44,10 @@ main {
   min-height: 100%;
 }
 
+.comment {
+
+}
+
 .content {
   margin: 5% auto;
   text-align: center;
@@ -80,6 +84,36 @@ main {
   } to {
     opacity: 1;
   }
+}
+
+.popup {
+  display:none;
+  padding: 5px;
+  position: absolute;
+  background: #c2d6d6;
+  font-size: 0.7em;
+  z-index: 1;
+  bottom: 50%;
+  line-height: 1.2em;
+}
+
+.surfing:hover .popup{
+  display: block;
+  z-index: 1;
+  left: 5%;
+}
+
+.travel:hover .popup {
+  display: block;
+  right: 5%;
+  max-width: 25%;
+}
+
+.languages:hover .popup {
+  display: block;
+  margin: 0 auto;
+  bottom: 10%;
+  max-width: 25%;
 }
 
 /* Header */
@@ -142,7 +176,7 @@ li a:hover {
   float: right;
 }
 
-a.post-title:hover {
+a:hover {
   color: #066;
 }
 
