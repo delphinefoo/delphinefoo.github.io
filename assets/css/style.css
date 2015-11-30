@@ -109,7 +109,7 @@ main {
   max-width: 25%;
 }
 
-.languages:hover .popup {
+.languages:hover .popup, .reading:hover .popup {
   display: block;
   left: 37%;
   bottom: 10%;
