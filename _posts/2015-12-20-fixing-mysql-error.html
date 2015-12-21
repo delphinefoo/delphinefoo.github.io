@@ -1,0 +1,28 @@
+---
+layout: post
+title: How to Fix the MySQL PID File Missing Error with a Homebrew-Based Install on Mac OSX Yosemite 10.10.5
+categories:
+- setting up your environment, mysql, fixing annoying errors
+---
+
+<div class="post content">
+<p>
+During Hack Reactor's sprint about databases, I had to install and work with mySQL. On the second day of the 2-day sprint, I encountered an incredibly annoying problem: when I tried to start the mySQL server after shutting it down, I got an error in terminal saying "ERROR! MySQL server PID file could not be found!".</p>
+
+<p>This was after several hours of stopping and starting the server with no problems. What had happened? I googled the error and found a bunch of Stackoverflow and Stackexchange answers (the most helpful being: <a href="http://serverfault.com/questions/480889/mysql-server-pid-file-could-not-be-found">1</a>, <a href="http://stackoverflow.com/questions/17424863/error-mysql-manager-or-server-pid-file-could-not-be-found-qnap">2</a>, <a href="http://coolestguidesontheplanet.com/mysql-error-server-quit-without-updating-pid-file/">3</a>), as well as <a href="https://medium.com/@nutritionwndlnd/how-to-fix-the-dreaded-pid-file-error-for-homebrew-based-mysql-mac-osx-d887bc466b9a#.cm7cqmh1e">this great post on Medium</a>.</p>
+
+<p>However, I followed the specific directions in each of these posts and nothing worked. Lots of cursing ensued. I had to roll up my sleeves and try to figure out what was happening to cause the error, and then parse the instructions from all the posts I had found to correctly address the problem.</p>
+
+<p>From reading all of the links above, I figured out the following:</p>
+  <ol class="ordered-list">
+    <li> The mySQL PID (Process ID) file was not being found, and I needed to point mySQL to the PID file via a configuration file. I'm not sure why all of a sudden the program couldn't find the PID file when I hadn't been getting this error up to that point, but the situation needed fixing.</li>
+    <li> Your PID file should be located in the mysql folder. I found my PID file in the directory '/usr/local/var/mysql'.Your mysql folder may be located in a different place than mine. You can search for the location of the mysql folder containing the PID file by typing the following (without quotation marks) into your terminal: 'find / -type d -name mysql'.</li>
+    <li>Once you find your PID file location, you have to create a mySQL configuration file pointing mySQL to the PID location, and put this configuration file in the place where mySQL will look for it. The configuration file must be named 'my.cnf' in order for it to be recognized as the configuration file. According to that <a href="https://medium.com/@nutritionwndlnd/how-to-fix-the-dreaded-pid-file-error-for-homebrew-based-mysql-mac-osx-d887bc466b9a#.cm7cqmh1e">Medium post</a>, mySQL installations using Homebrew (like mine) don't use a configuration file out of the box. If you want a configuration file to be used, you have to put it in your '/private/etc/' folder.</li>
+    <li>If you're <span class="bold">not using a Homebrew install of mySQL</span>, you may have a my.cnf file somewhere that <span class="italic">is</span> being used. Search for it using the 'find' command in terminal: 'find / -type f -name my.cnf'. Once you've found it, you just need to alter it as in the image in the next step; don't create a new one.</li>
+    <li>Here's how you create your configuration file: create a new file named 'my.cnf' in your text editor. Inside that file, write the following two lines:
+    <img src="">
+    and save the file to your /private/etc/ folder.</li>
+    <li>I had to save the configuration file on my desktop at first, because I was denied permission to create it directly in my /private/etc/ folder. I probably could have 'sudo' created the file in the /private/etc/ folder, but to get some more command line practice, I decided to just do it on my desktop and then move it to the correct folder by typing 'mv ~/Desktop/mycnf &nbsp;/private/etc/' into terminal. This moves the file to the specified location.</li>
+  </ol>
+  <p>Hopefully, when you go back to the terminal and type in 'mysql.server start', you should get a success message and all will be good. If not, you're out of luck with this post, and it's on to more Googling for you. Good luck!</p>
+</div>
