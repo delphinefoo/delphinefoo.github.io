@@ -241,6 +241,11 @@ footer {
   height: 60px;
 }
 
+.full-column {
+  max-width: 100%;
+  margin: 10px auto;
+}
+
 .social {
   display: flex;
   width: 50%;
