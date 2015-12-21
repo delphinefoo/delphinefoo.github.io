@@ -5,13 +5,11 @@ layout: default
 <div class="blog headline">
     <h1>My thoughts on programming.</h1>
 </div>
-<div class="post-list">
-  <ul>
+<table class="post-list">
     {% for post in site.posts %}
-      <li>
-        <div class="left-col"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></div>
-         <div class="right-col"><time>{{ post.date | date: '%B %-d, %Y'}}</time></div>
-      </li>
+      <tr>
+        <td class="left-col"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></td>
+        <td class="right-col"><time>{{ post.date | date: '%B %-d, %Y'}}</time></td>
+      </tr>
     {% endfor %}
-  </ul>
-</div>
+</table>

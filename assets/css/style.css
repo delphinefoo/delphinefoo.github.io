@@ -28,24 +28,18 @@ p {
   padding-bottom: 1em;
 }
 
-.centered {
-  text-align: center;
-}
-
-.wrapper {
-  min-height: 100%;
-  position: relative;
-}
-
-
 main {
   padding: 10px;
   padding-bottom: 60px;
   min-height: 100%;
 }
 
-.comment {
+.bold {
+  font-weight: 600;
+}
 
+.centered {
+  text-align: center;
 }
 
 .content {
@@ -61,6 +55,15 @@ main {
   margin: 15% auto 0;
   text-align: center;
   font-size: 1.5em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
 }
 
 /* About page */
@@ -171,30 +174,33 @@ li a {
   font-size: .7em;
 }
 
-.date {
-  float: right;
-}
-
 a:hover {
   color: #066;
 }
 
 .post {
   text-align: justify;
+}
+
+.post p {
   text-indent: 20px;
 }
 
 /* Posts landing page */
 
 .left-col {
-  float: left;
-  width: 47%;
   text-align: right;
+  padding-right: 15px;
 }
 
 .right-col {
-  float: right;
+  padding-left: 15px;
+  vertical-align: middle;
+}
+
+.left-col, .right-col {
   width: 47%;
+  padding-bottom: 30px;
 }
 
 .post-list {
@@ -214,6 +220,16 @@ hr {
   width: 15%;
   margin-bottom: 75px;
   margin-top: 30px;
+}
+
+.ordered-list {
+  list-style: decimal;
+  padding-left: 1.4em;
+  margin-bottom: 30px;
+}
+
+li {
+  margin-bottom: 15px;
 }
 
 /* Footer */
