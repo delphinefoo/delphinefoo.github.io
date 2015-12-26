@@ -1,0 +1,59 @@
+---
+layout: post
+title: How to set up a simple server using Node.js and the Node http module.
+categories:
+- servers
+- backend
+- node
+---
+
+<div class="post content">
+  <p>In this post, I'll demonstrate how to write and run a simple server. We'll be using Node, a Javascript runtime environment for developing server-side applications. Node is a Javascript runtime environment that can be used outside of any web browser (and thus, is good for server-side programming).
+  </p>
+
+  <p>One of the things that tends to be confusing in tech is the interchangeability of terms. For example, a server can refer to the program that is written to facilitate the 'serving' of files, or it can refer to the machine on which this program resides and runs. In this post, I'm using the former definition. Prior to last week, I had a fuzzy notion of what exactly a server is. Most of my confusion stemmed from the constantly interchanged usage of the two definitions of server. I'd never heard explained explicitly what the two meanings of 'server' were. Hack Reactor's learning materials tend to address common misunderstandings like this, which is just one small reason why they're so effective.
+  </p>
+
+  <p>First, you'll need to have Node.js installed. Sometimes I install stuff and then wait so long to use it that I can't remember if I have it installed or not. To check if you already have Node  installed, type "node -v" into Terminal and press enter. If you have Node installed, the line below your command will read something like "v 5.0.0", which is telling you which version you have. If you don't see a line like that, follow the instructions <a href="http://blog.teamtreehouse.com/install-node-js-npm-mac" target="_blank">here</a> to install Node using Homebrew (Mac only).
+  </p>
+
+  <p>When you install Node, NPM (Node's package manager) will also automatically be installed. NPM is essential; it allows you to quickly and easily install any third-party modules (packages) written for Node. There are countless modules out there that are  will make life easier when programming with Node. Run "npm -v" in Terminal and you should see a version number come up. The <a href="http://blog.teamtreehouse.com/install-node-js-npm-mac" target="_blank">link for installing Node</a> also has instructions for making sure your Node and NPM versions are up to date.
+  </p>
+
+  <p>With the installation requirements out of the way, we can finally build our server. Create and save a file called 'server.js'.
+  </p>
+
+  <p>The following is a step-by-step list of what you will need to type into your server.js file, as well as a short explanation of the lines you'll be typing.</p>
+  <ol class="ordered-list">
+    <li>Include the Node module 'http', which allows easy creation of a server. You can read about this module at <a href="https://nodejs.org/api/http.html" target="_blank">https://nodejs.org/api/http.html</a>.
+    <img class="full-column" src="/assets/images/server-setup/step1.png">
+    </li>
+
+    <li>Define a requestListener function, which is what will provide a response to the GET request from the browser when you visit the IP address and port specified in step #4 below. Our request listener takes two arguments: the <span class="italic">request</span> sent to us, and the <span class="italic">response</span> we will be sending back.
+    <img class="full-column" src="/assets/images/server-setup/step2.png">
+    "Response.end" is a <a href="https://nodejs.org/api/http.html#http_response_end_data_encoding_callback" target="_blank">method provided by the http module</a>.
+    </li>
+
+    <li>Create a new instance of a server. RequestListener is the function that we wrote above in direction #3 to respond to HTTP requests.
+    <img class="full-column" src="/assets/images/server-setup/step3.png">
+    </li>
+
+    <li>Tell the server to start listening on port 3000 at IP address 127.0.0.1. 127.0.0.1 is the IP address also referred to as the "localhost". This address is used to establish an IP connection to the same computer being used by the end-user.
+    <img class="full-column" src="/assets/images/server-setup/step4.png">
+    </li>
+    <li list-style-type="none">Here's the full code with comments in the file:
+    <img class="full-column" src="/assets/images/server-setup/with-comments.png"></li>
+  </ol>
+  <p>Now go to your terminal and run "node server.js" (you must be in the folder where your server.js file is saved to run the command as is, or you must use the relative path to the file in the command). This command runs the server.js program in Node, starting up the server. Then go to "http://127.0.0.1:3000" in a web browser and you'll see the message "You've just built your first server!" in the upper left corner of the browser window. To stop your server from running, use Ctrl + C in the Terminal window where you ran "node server.js".</p>
+
+  <p>This is a very simple version of a web server. We haven't specified how to deal with different requests such as GET, PUT, POST or DELETE. Our server will deal with all requests the same way, because our requestListener function is only programmed to respond with that one message. Real web servers are programmed to handle many different types of requests to many different URLs. However basic, I hope that this quick server demo helps you understand how servers work in general.</p>
+
+  <hr/>
+
+  <p>A few links to read more on the basics of servers:</p>
+  <ul>
+    <li><a href="http://computer.howstuffworks.com/web-server.htm" target="_blank">How Web Servers Work (howstuffworks.com)</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/Learn/What_is_a_web_server" target="_blank">What is a web server (Mozilla Developer Network)</li>
+    <li><a href="https://www.youtube.com/watch?v=-DHjFEzuDjQ" target="_blank">A simple way to understand how web servers work (Youtube)</li>
+  </ul>
+</div>
