@@ -1,0 +1,40 @@
+---
+layout: post
+title: Passing by reference vs. passing by value
+categories:
+- weirdJS
+---
+
+<div class="post content">
+  <p>Did you know that in JavaScript, certain values are passed by reference but others are passed by their values?
+  There are two kinds of types: <span class="italic">primitive</span> types and <span class="italic">reference</span> types. Guess which ones are passed by reference?
+  </p>
+
+  <p>
+  Primitive types are:
+    <ul>
+      <li>Booleans</li>
+      <li>Strings</li>
+      <li>Numbers</li>
+      <li>Null</li>
+      <li>Undefined</li>
+    </ul>
+
+  Reference types are:
+    <ul>
+      <li>Arrays</li>
+      <li>Objects</li>
+      <li>Anything that's not a primitive type</li>
+    </ul>
+  </p>
+
+  <p>Primitive types are passed by value. Here's an example:<br>
+    <img class="full-column" src="/assets/images/reference/primitive.jpg">
+    In this example, when x changes from red to blue, y does not change. That's because when y was made equal to x, y was given the exact same value as x, but they were not pointing at the same place in memory.
+    You can visualize it like this: (insert image)
+  </p>
+
+  <p>Here's a second example:
+    <img class="full-column" src="/assets/images/reference/reference.jpg">
+  </p>
+</div>
