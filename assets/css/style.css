@@ -38,10 +38,6 @@ main {
   font-weight: 600;
 }
 
-.centered {
-  text-align: center;
-}
-
 .content {
   margin: 5% auto;
   text-align: center;
@@ -222,18 +218,10 @@ hr {
   margin-top: 30px;
 }
 
-.centered {
-  text-align: center;
-}
-
 .ordered-list {
   list-style: decimal;
   padding-left: 1.4em;
   margin-bottom: 30px;
-}
-
-li p {
-  /*margin-bottom: 15px;*/
 }
 
 /* Footer */
