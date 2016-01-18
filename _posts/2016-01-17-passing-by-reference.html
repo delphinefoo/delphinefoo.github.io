@@ -1,0 +1,42 @@
+---
+layout: post
+title: Passing by reference vs. passing by value
+categories:
+- weirdJS
+---
+
+<div class="post content">
+  <p>Did you know that in JavaScript, certain values are passed by reference but others are passed by their values?
+  There are two kinds of types: <span class="italic">primitive</span> types and <span class="italic">reference</span> types. Guess which ones are passed by reference?
+  <br>
+  <br>
+  Primitive types are:
+    <ol class="ordered-list">
+      <li>Booleans</li>
+      <li>Strings</li>
+      <li>Numbers</li>
+      <li>Null</li>
+      <li>Undefined</li>
+    </ol>
+
+  Reference types are:
+  <br>
+  <br>
+    <ol class="ordered-list">
+      <li>Arrays</li>
+      <li>Objects</li>
+      <li>Anything that's not a primitive type</li>
+    </ol>
+  </p>
+  <p>Primitive types are passed by value. Here's an example:</p>
+    <img class="full-column" src="/assets/images/reference/prim-ex1.jpg"><br>
+  <p>In this example, when x changes from red to blue, y does not change. That's because when y was made equal to x, y was given the exact same value as x, but they were not pointing at the same place in memory. You can visualize it like this: </p>
+    <img class="full-column" src="/assets/images/reference/prim-diag.jpg">
+  </p>
+
+  <p>Now let's look at a second example, using an object, which is a reference type (not a primitive type):</p>
+  <img class="full-column" src="/assets/images/reference/ref-ex1.jpg"><br>
+  <p>This weirdness happens because objects are passed <span class="italic">by reference</span>, not by value. This means that when we made y equal to x, we made y point to the same place in memory that x was pointing to, and they are pointing to the same object.</p>
+  <img class="full-column" src="/assets/images/reference/ref-diag.jpg">
+  <p>When you alter y, you are also altering x. This is important to remember when working with objects!</p>
+</div>

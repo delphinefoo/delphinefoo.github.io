@@ -222,14 +222,18 @@ hr {
   margin-top: 30px;
 }
 
+.centered {
+  text-align: center;
+}
+
 .ordered-list {
   list-style: decimal;
   padding-left: 1.4em;
   margin-bottom: 30px;
 }
 
-li {
-  margin-bottom: 15px;
+li p {
+  /*margin-bottom: 15px;*/
 }
 
 /* Footer */
