@@ -26,23 +26,23 @@ categories:
   <p>The following is a step-by-step list of what you will need to type into your server.js file, as well as a short explanation of the lines you'll be typing.</p>
   <ol class="ordered-list">
     <li><p>Include the Node module 'http', which allows easy creation of a server. You can read about this module at <a href="https://nodejs.org/api/http.html" target="_blank">https://nodejs.org/api/http.html</a>.</p>
-    <img class="full-column" src="/assets/images/server-setup/step1.png">
+    <img class="full-column" src="/assets/images/12-26-15-server-setup/step1.png">
     </li>
 
-    <li><p>Define a requestListener function, which is what will provide a response to the GET request from the browser when you visit the IP address and port specified in step #4 below. Our request listener takes two arguments: the <span class="italic">request</span> sent to us, and the <span class="italic">response</span> we will be sending back.<p>
-    <img class="full-column" src="/assets/images/server-setup/step2.png">
+    <li><p>Define a requestListener function, which is what will provide a response to the GET request from the browser when you visit the IP address and port specified in step #4 below. Our request listener takes two arguments: the <span class="italic">request</span> sent to us, and the <span class="italic">response</span> we will be sending back.</p>
+    <img class="full-column" src="/assets/images/12-26-15-server-setup/step2.png">
     "Response.end" is a <a href="https://nodejs.org/api/http.html#http_response_end_data_encoding_callback" target="_blank">method provided by the http module</a>.
     </li>
 
     <li><p>Create a new instance of a server. RequestListener is the function that we wrote above in direction #3 to respond to HTTP requests.</p>
-    <img class="full-column" src="/assets/images/server-setup/step3.png">
+    <img class="full-column" src="/assets/images/12-26-15-server-setup/step3.png">
     </li>
 
     <li><p>Tell the server to start listening on port 3000 at IP address 127.0.0.1. 127.0.0.1 is the IP address also referred to as the "localhost". This address is used to establish an IP connection to the same computer being used by the end-user.</p>
-    <img class="full-column" src="/assets/images/server-setup/step4.png">
+    <img class="full-column" src="/assets/images/12-26-15-server-setup/step4.png">
     </li>
     <li><p>Here's the full code with comments in the file:</p>
-    <img class="full-column" src="/assets/images/server-setup/with-comments.png"></li>
+    <img class="full-column" src="/assets/images/12-26-15-server-setup/with-comments.png"></li>
   </ol>
   <p>Now go to your terminal and run "node server.js" (you must be in the folder where your server.js file is saved to run the command as is, or you must use the relative path to the file in the command). This command runs the server.js program in Node, starting up the server. Then go to "http://127.0.0.1:3000" in a web browser and you'll see the message "You've just built your first server!" in the upper left corner of the browser window. To stop your server from running, use Ctrl + C in the Terminal window where you ran "node server.js".</p>
 

@@ -1,0 +1,49 @@
+---
+layout: post
+title: Sublime Text Linting for ES6 and React
+categories:
+- setting up your environment
+- React
+- ES6
+---
+<div class="post content">
+  <p>I love linters. They're a time-saver and bug-preventer, and I don't know how anyone can write code without one. I was using JSHint for Sublime Text for linting in ES5 files, until our current project at Hack Reactor. For this project, my team decided to take on learning and implementing React and Redux, with ES6. EcmaScript6 (aka Harmony or EcmaScript 2015, and a handful of other monikers) is coming and there's no getting away from it, so we thought we might as well take the opportunity to dive right in!
+  </p>
+
+  <p>I poked around and found that, in order to lint files that use ES6, I would need to use a different Sublime Text plugin and disable other JavaScript linters, so I disabled JSHint.</p>
+
+  <p>Here are the steps I took to set up linting for my React + ES6 project:</p>
+  <ol class="ordered-list">
+    <li>
+      Install <a href="http://eslint.org/docs/user-guide/getting-started" target="_blank">ESLint</a> on your computer by running 'npm install -g eslint' in your Terminal.
+    </li>
+    <br>
+    <li>
+      Install <a href="https://github.com/babel/babel-eslint" target="_blank">Babel-eslint</a> on your computer by running 'npm install -g babel-eslint' in your Terminal. Babel-eslint will act as the parser for ES6.
+    </li>
+    <br>
+    <li>
+      Install SublimeLinter via Package Control: Bring up the Sublime Text Command Palette (Ctrl + Shift + P) and type 'install' in the search bar. You will see a list of commands; choose 'Package Control: Install Package'. A list of packages will appear; start typing 'SublimeLinter'. This will filter the list, and you should see an option called 'SublimeLinter'. Choose that one.
+    </li>
+    <br>
+    <li>
+      Install <a href="https://github.com/roadhump/SublimeLinter-eslint" target="_blank">Sublime-Linter-contrib-eslint</a> using Package Control (same process as in the last step).
+    </li>
+    <br>
+    <li>
+    Make sure you don't have any other JavaScript or JSX linters enabled in Sublime Text (JSX is the React syntax that allows you to write HTML in the midst of JavaScript). If you do, disable them. They will conflict with your new linting setup.
+    </li>
+    <br>
+    <li>
+    Install the Sublime Text package <a href="https://github.com/babel/babel-sublime" target="_blank">babel-sublime</a>. This package contains "language definitions for ES6 and JavaScript with React JSX syntax extensions".
+    </li>
+    <br>
+    <li>Set Babel as the default syntax for linting JS and JSX files. Go to your Sublime Linter User settings (Sublime Text menu > Preferences > Settings User) and add in a line under the 'syntax-map' setting for 'javascript(babel)'. See lines 39 to 42 in the below screenshot.
+    <img class="full-column" src="/assets/images/02-01-16-linting/syntax-map.png">
+    </li>
+  </ol>
+  You should be all set!<br>
+  <br>
+  A huge thank you and a tip of the hat to <a href="https://twitter.com/dan_abramov" target="_blank">Dan Abramov</a> for his excellent post <a href="https://medium.com/@dan_abramov/lint-like-it-s-2015-6987d44c5b48#.1id2bq4sv" target="_blank">'Lint Like It's 2015'</a>.
+
+</div>
