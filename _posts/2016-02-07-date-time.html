@@ -1,0 +1,16 @@
+---
+layout: post
+title: Saving a dateTime object in a MySQL database
+categories:
+- weirdJS
+- MySQL
+- dateTime
+---
+<div class="post content">
+  <p>I'm working with a MySQL database in my current project, and I have a "date" column in the table. I'm using a datepicker from  <a href="http://www.material-ui.com/#/components/date-picker" target="_blank">Material-UI</a> for React, which provides the date as a Date object. However, when I went to save the Date object into our MySQL database, I kept getting an error saying "Incorrect dateTime value '2016-02-07T17:00:00Z00:00'".
+  </p>
+
+  <p>I read up on <a href="http://dev.mysql.com/doc/refman/5.7/en/datetime.html" target="_blank">MySQL's dateTime type</a>, and tried saving the date provided by the datepicker as a string, as a new Date object, as stringified JSON... No dice. What worked for me? Importing <a href="" target="_blank">moment.js</a>, and formatting the date object provided by the datepicker with the function <span class="bold">moment('my date object here').format('YYYY-MM-DD HH:mm:ss')</span>. The MySQL database liked that format!
+  </p>
+
+</div>
