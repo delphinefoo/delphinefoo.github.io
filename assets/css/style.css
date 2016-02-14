@@ -96,6 +96,10 @@ main {
   line-height: 1.2em;
 }
 
+.reading, .travel, .languages, .surfing {
+  color: #699;
+}
+
 .surfing:hover .popup{
   display: block;
   z-index: 1;
